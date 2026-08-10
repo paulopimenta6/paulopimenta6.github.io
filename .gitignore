@@ -1,2 +1,5 @@
 *.DS_Store
 Thumbs.db
+
+# fotos originais (o site usa as versões otimizadas em assets/images)
+minhas_fotos/

@@ -15,8 +15,8 @@
     <div class="hero-inner">
       <img
         class="avatar"
-        src="https://avatars.githubusercontent.com/paulopimenta6"
-        alt="Foto de perfil de Paulo Pimenta"
+        src="assets/images/avatar.jpg"
+        alt="Foto de Paulo Pimenta"
       />
       <h1>Paulo Pimenta</h1>
       <p class="tagline">Meteorologista · Mestrando em Estatística Aplicada à Saúde</p>
@@ -58,6 +58,29 @@
         <span class="skill">Modelagem Estatística</span>
         <span class="skill">Saúde Pública</span>
         <span class="skill">Meteorologia</span>
+      </div>
+    </section>
+
+    <section class="section" id="fotos">
+      <h2>Fotos e Desenhos</h2>
+      <p>Um pouco de quem eu sou — retratos e desenhos meus.</p>
+      <div class="gallery">
+        <figure class="gallery-item">
+          <img src="assets/images/eu_atualmente.jpg" alt="Foto atual de Paulo Pimenta" loading="lazy" />
+          <figcaption>Atualmente</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/eu_na_minha_formatura.jpg" alt="Paulo Pimenta na formatura" loading="lazy" />
+          <figcaption>Minha formatura (IAG-USP)</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/eu_em_forma_de_desenho.jpg" alt="Desenho do Paulo Pimenta" loading="lazy" />
+          <figcaption>Eu em forma de desenho</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/images/shunasJourney.jpg" alt="Desenho Shuna's Journey" loading="lazy" />
+          <figcaption>Shuna's Journey</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -108,5 +131,40 @@
       <a href="mailto:paulopimenta6@gmail.com">paulopimenta6@gmail.com</a>
     </p>
   </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Visualização de imagem">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Fechar">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+
+    document.querySelectorAll(".gallery-item img").forEach((img) => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightboxCaption.textContent = img.closest("figure").querySelector("figcaption").textContent;
+        lightbox.classList.add("open");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
 </body>
 </html>
