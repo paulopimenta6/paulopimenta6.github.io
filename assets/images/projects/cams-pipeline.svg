@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="camsTitle camsDesc">
+  <title id="camsTitle">Pipeline do projeto CAMS</title>
+  <desc id="camsDesc">Fluxo em quatro etapas: API ADS, download, validação e análise, com dados brutos e chave da API fora do repositório.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f766e"/>
+    </marker>
+    <style>
+      .title { font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 42px; font-weight: 700; fill: #0f172a; }
+      .subtitle { font-family: Inter, system-ui, sans-serif; font-size: 20px; fill: #52627a; }
+      .step { font-family: Inter, system-ui, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; fill: #0f766e; }
+      .label { font-family: Inter, system-ui, sans-serif; font-size: 23px; font-weight: 700; fill: #0f172a; }
+      .detail { font-family: Inter, system-ui, sans-serif; font-size: 16px; fill: #52627a; }
+      .tag { font-family: Inter, system-ui, sans-serif; font-size: 14px; fill: #0f766e; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .note-title { font-family: Inter, system-ui, sans-serif; font-size: 18px; font-weight: 700; fill: #0f172a; }
+      .note { font-family: Inter, system-ui, sans-serif; font-size: 17px; fill: #3f5067; }
+      .foot { font-family: Inter, system-ui, sans-serif; font-size: 14px; fill: #7b8ca5; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="750" fill="#f4f7fb"/>
+  <text class="title" x="70" y="92">Pipeline CAMS</text>
+  <text class="subtitle" x="70" y="132">Do download à análise, com validação no caminho</text>
+
+  <rect class="box" x="70" y="220" width="240" height="180" rx="18"/>
+  <text class="step" x="94" y="258">01</text>
+  <text class="label" x="94" y="300">API ADS</text>
+  <text class="detail" x="94" y="334">CAMS EAC4</text>
+  <text class="tag" x="94" y="372">chave fora do repositório</text>
+
+  <rect class="box" x="350" y="220" width="240" height="180" rx="18"/>
+  <text class="step" x="374" y="258">02</text>
+  <text class="label" x="374" y="300">Download</text>
+  <text class="detail" x="374" y="334">cache local</text>
+  <text class="tag" x="374" y="372">dados brutos fora do Git</text>
+
+  <rect class="box" x="630" y="220" width="240" height="180" rx="18"/>
+  <text class="step" x="654" y="258">03</text>
+  <text class="label" x="654" y="300">Validação</text>
+  <text class="detail" x="654" y="334">schema e qualidade</text>
+  <text class="tag" x="654" y="372">testes com dados sintéticos</text>
+
+  <rect class="box" x="910" y="220" width="220" height="180" rx="18"/>
+  <text class="step" x="934" y="258">04</text>
+  <text class="label" x="934" y="300">Análise</text>
+  <text class="detail" x="934" y="334">Python + relatórios</text>
+  <text class="tag" x="934" y="372">figuras e tabelas</text>
+
+  <line x1="312" y1="310" x2="344" y2="310" stroke="#0f766e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="592" y1="310" x2="624" y2="310" stroke="#0f766e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="872" y1="310" x2="904" y2="310" stroke="#0f766e" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <rect x="70" y="466" width="1060" height="150" rx="18" fill="#e8f7f4" stroke="#99e6d8" stroke-width="1.5"/>
+  <text class="note-title" x="96" y="507">O que eu levo do pipeline</text>
+  <text class="note" x="96" y="541">Dados brutos, logs e bancos ficam fora do Git. A chave da API nunca entra no repositório.</text>
+  <text class="note" x="96" y="571">Os testes com dados sintéticos mostram que o software funciona — não representam o mundo real.</text>
+  <text class="foot" x="96" y="607">Reprodutibilidade · Proveniência · Limites explícitos</text>
+
+  <text class="foot" x="70" y="690">Fonte: projeto pessoal CAMS · Copernicus Atmosphere Monitoring Service</text>
+</svg>
